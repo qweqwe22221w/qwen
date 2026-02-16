@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPN Comparison Site</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>VPN Provider Comparison</h1>
+    <p>Compare top VPN services to find the best one for your needs</p>
+  </header>
+
+  <main>
+    <div class="providers-container">
+      <% vpnProviders.forEach(provider => { %>
+        <div class="provider-card">
+          <div class="provider-header">
+            <h2><%= provider.name %></h2>
+            <span class="rating">Rating: <%= provider.rating %>/5.0</span>
+          </div>
+          
+          <div class="provider-details">
+            <p class="description"><%= provider.description %></p>
+            
+            <div class="price-tag">
+              <strong><%= provider.price %></strong>
+            </div>
+            
+            <div class="action-buttons">
+              <a href="<%= provider.link %>" target="_blank" class="btn primary-btn">Visit Website</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 VPN Comparison Site. All rights reserved.</p>
+  </footer>
+</body>
+</html>
